@@ -1,0 +1,36 @@
+{
+  "name": "learning-express",
+  "version": "1.0.0",
+  "description": "An introduction to APIs using Express",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "start": "tsx src/index.ts",
+    "dev": "pnpm typecheck && pnpm start"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "nodejs",
+    "typescript"
+  ],
+  "author": "gnattily",
+  "license": "MIT",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.8.1",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.8.1",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
