@@ -6,7 +6,9 @@
     "dev": "tsx --env-file=.env src/index.ts",
     "db:start": "docker compose up -d --wait",
     "db:stop": "docker compose down",
-    "db:reset": "docker compose down -v && pnpm db:start"
+    "db:reset": "docker compose down -v && pnpm db:start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "express",
@@ -29,9 +31,15 @@
     "express": "^5.2.1"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.3",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "jiti": "^2.7.0",
     "tsx": "^4.23.15",
-    "typescript": "^7.0.2"
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.71.1"
   }
 }

@@ -1,7 +1,7 @@
 export const isProd = process.env.NODE_ENV === 'production';
 export const postgresURL = getPostgresUrl();
 
-function getPostgresUrl (): string {
+function getPostgresUrl(): string {
     if (isProd) {
         const url = process.env.DATABASE_URL;
 
