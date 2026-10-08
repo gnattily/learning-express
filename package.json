@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "An introduction to APIs using Express",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "dev": "pnpm typecheck && tsx src/index.ts",
+    "dev": "tsx --env-file=.env src/index.ts",
     "db:start": "docker compose up -d --wait",
     "db:stop": "docker compose down",
     "db:reset": "docker compose down -v && pnpm db:start"
