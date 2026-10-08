@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:18.6
+    environment:
+      - POSTGRES_USER=${DEV_PG_USER:-dev}
+      - POSTGRES_PASSWORD=${DEV_PG_PASSWORD:-devpassword}
+      - POSTGRES_DB=${DEV_PG_DB:-devdb}
+    ports:
+      - "${DEV_PG_PORT:-5432}:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
